@@ -1,0 +1,11 @@
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}/warewarden_backend/.venv/bin/python",
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/warewarden_backend/warewarden_api"
+    ],
+    "python.analysis.typeCheckingMode": "strict",
+    "python.analysis.autoImportCompletions": true,
+    "flake8.args": [
+        "--max-line-length=120"
+    ]
+}

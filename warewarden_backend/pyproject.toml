@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "WareWarden API"
+version = "0.1.0"
+description = "RESTful WareWarden API"
+authors = ["Zepten"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+fastapi = "^0.115.6"
+uvicorn = {extras = ["standard"], version = "^0.34.0"}
+pydantic = {extras = ["email"], version = "^2.10.4"}
+sqlalchemy = {extras = ["asyncio"], version = "^2.0.36"}
+aiosqlite = "^0.20.0"
+pydantic-settings = "^2.7.0"
+alembic = "^1.14.0"
+orjson = "^3.10.13"
+asyncpg = "^0.30.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+black = "^24.10.0"
+ruff = "^0.9.0"
+mypy = "^1.14.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
