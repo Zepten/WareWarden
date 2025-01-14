@@ -33,6 +33,7 @@ class ApiV1Settings(BaseModel):
 
 class ApiSettings(BaseModel):
     prefix: str = "/api"
+    healthcheck: str = "/healthcheck"
     v1: ApiV1Settings = ApiV1Settings()
 
 
