@@ -1,5 +1,14 @@
 {
     "python.defaultInterpreterPath": "${workspaceFolder}/warewarden_backend/.venv/bin/python",
+    "ruff.interpreter": [
+        "${workspaceFolder}/warewarden_backend/.venv/bin/python"
+    ],
+    "flake8.interpreter": [
+        "${workspaceFolder}/warewarden_backend/.venv/bin/python"
+    ],
+    "black-formatter.interpreter": [
+        "${workspaceFolder}/warewarden_backend/.venv/bin/python"
+    ],
     "python.analysis.extraPaths": [
         "${workspaceFolder}/warewarden_backend/warewarden_api"
     ],
