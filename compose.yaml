@@ -1,0 +1,39 @@
+name: warewarden
+
+services:
+  api-service:
+    build:
+      context: ./warewarden_backend
+      dockerfile: Dockerfile
+    # TODO: depends_on:
+    # TODO:   db-service:
+    # TODO:     condition: service_healthy
+    env_file:
+      - ./warewarden_backend/warewarden_api/.env
+    environment:
+      - FASTAPI_ENV=development
+    volumes:
+      - ./warewarden_backend:/src
+    ports:
+      - 8080:8080
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/api/health/"]
+      interval: 5s
+      timeout: 5s
+    restart: always
+
+  # TODO: db-service:
+  # TODO:   image: postgres:14-alpine
+  # TODO:   env_file:
+  # TODO:     - ./warewarden_backend/warewarden_api/.env
+  # TODO:   environment:
+  # TODO:     - DATABASE_URL=${APP_CONFIG__DB__URL}
+  # TODO:   ports:
+  # TODO:     - "8081:5432"
+  # TODO:   volumes:
+  # TODO:     - .postgres_data:/var/lib/postgresql/data
+  # TODO:   healthcheck:
+  # TODO:     test: ["CMD-SHELL", "pg_isready", "-d", "db_dev"]
+  # TODO:     interval: 5s
+  # TODO:     timeout: 5s
+  # TODO:   restart: always
