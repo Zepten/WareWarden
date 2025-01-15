@@ -51,7 +51,7 @@ RUN poetry install --no-root --no-interaction
 
 WORKDIR /src
 
-EXPOSE $APP_CONFIG__RUN__PORT
+EXPOSE 8080
 ENTRYPOINT /docker-entrypoint.sh $0 $@
 CMD ["poetry", "run", "python", "./warewarden_api/main.py"]
 
