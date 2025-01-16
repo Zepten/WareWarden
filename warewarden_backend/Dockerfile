@@ -53,7 +53,7 @@ WORKDIR /src
 
 EXPOSE 8080
 ENTRYPOINT /docker-entrypoint.sh $0 $@
-CMD ["poetry", "run", "python", "./warewarden_api/main.py"]
+CMD ["python", "./warewarden_api/main.py"]
 
 ###############################################################################
 # TODO: Stage 4. Linting image
