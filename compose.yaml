@@ -6,12 +6,10 @@ volumes:
 services:
   postgres-service:
     image: postgres:17.2-alpine3.21
-    env_file:
-      - ./warewarden_backend/warewarden_api/.env
     environment:
-      - POSTGRES_DB=$${APP_CONFIG__DB__PATH}
-      - POSTGRES_USER=$${APP_CONFIG__DB__USERNAME}
-      - POSTGRES_PASSWORD=$${APP_CONFIG__DB__PASSWORD}
+      - POSTGRES_DB=${DB_PATH}
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
     ports:
       - "5432:5432"
     volumes:
@@ -34,8 +32,16 @@ services:
     depends_on:
       postgres-service:
         condition: service_healthy
-    env_file:
-      - ./warewarden_backend/warewarden_api/.env
+    environment:
+      - APP_CONFIG__DB__USERNAME=${DB_USERNAME}
+      - APP_CONFIG__DB__PASSWORD=${DB_PASSWORD}
+      - APP_CONFIG__DB__PATH=${DB_PATH}
+      - APP_CONFIG__DB__HOST=${DB_HOST}
+      - APP_CONFIG__DB__PORT=${DB_PORT}
+      - APP_CONFIG__DB__ECHO=${DB_ECHO}
+      - APP_CONFIG__DB__ECHO_POOL=${DB_ECHO_POOL}
+      - APP_CONFIG__DB__POOL_SIZE=${DB_POOL_SIZE}
+      - APP_CONFIG__DB__MAX_OVERFLOW=${DB_MAX_OVERFLOW}
     volumes:
       - ./warewarden_backend:/src
     ports:
