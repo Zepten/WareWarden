@@ -1,6 +1,6 @@
 # WareWarden
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-orange.svg)](./LICENSE.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-orange.svg)](./LICENSE)
 
 ## Описание
 
