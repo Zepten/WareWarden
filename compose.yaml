@@ -36,14 +36,14 @@ services:
       - APP_CONFIG__DB__USERNAME=${DB_USERNAME:?error}
       - APP_CONFIG__DB__PASSWORD=${DB_PASSWORD:?error}
       - APP_CONFIG__DB__PATH=${DB_PATH:?error}
-      - APP_CONFIG__DB__HOST=${DB_HOST:?error}
-      - APP_CONFIG__DB__PORT=${DB_PORT:?error}
+      - APP_CONFIG__DB__HOST=postgres-service
+      - APP_CONFIG__DB__PORT=5432
       - APP_CONFIG__DB__ECHO=${DB_ECHO:?error}
       - APP_CONFIG__DB__ECHO_POOL=${DB_ECHO_POOL:?error}
       - APP_CONFIG__DB__POOL_SIZE=${DB_POOL_SIZE:?error}
       - APP_CONFIG__DB__MAX_OVERFLOW=${DB_MAX_OVERFLOW:?error}
-      - APP_CONFIG__RUN__HOST=${API_RUN_HOST:?error}
-      - APP_CONFIG__RUN__PORT=${API_RUN_PORT:?error}
+      - APP_CONFIG__RUN__HOST=0.0.0.0
+      - APP_CONFIG__RUN__PORT=8080
     volumes:
       - ./warewarden_backend:/src
     ports:
