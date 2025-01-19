@@ -28,7 +28,7 @@ services:
   api-service:
     build:
       context: ./warewarden_backend
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     depends_on:
       postgres-service:
         condition: service_healthy
@@ -58,7 +58,7 @@ services:
   react-app-service:
     build:
       context: ./warewarden_frontend
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     environment:
       - NODE_ENV=development
       - WDS_SOCKET_PORT=0
