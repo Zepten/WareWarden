@@ -48,10 +48,15 @@ class ApiSettings(BaseModel):
     v1: ApiV1Settings = ApiV1Settings()
 
 
+class ReactAppSettings(BaseModel):
+    host: str = "localhost"
+
+
 class Settings(BaseSettings):
     api: ApiSettings = ApiSettings()
     run: RunSettings = RunSettings()
     db: DbSettings = DbSettings()
+    react_app: ReactAppSettings = ReactAppSettings()
     model_config = SettingsConfigDict(
         extra="ignore",
         case_sensitive=False,
