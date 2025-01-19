@@ -24,7 +24,8 @@ WareWarden является личным пет-проектом и не свя�
         - [Pydantic](https://docs.pydantic.dev/latest/) (валидация данных)
         - [SQLAlchemy](https://www.sqlalchemy.org/) (ORM для базы данных)
             - [asyncpg](https://github.com/MagicStack/asyncpg) (асинхронный драйвер для PostgreSQL)
-        - [Alembic](https://github.com/sqlalchemy/alembic) (управление миграциями базы данных)
+            - [Alembic](https://github.com/sqlalchemy/alembic) (инструмент для миграций базы данных)
+        - [Gunicorn](https://gunicorn.org/) (WSGI HTTP-сервер для Python)
 - Фронтенд:
     - [TypeScript](https://www.typescriptlang.org/) (типизированный JavaScript)
     - [Vite](https://vite.dev/) (инструмент сборки фронтенда)
