@@ -20,6 +20,8 @@ async def lifespan(app: FastAPI):
 
 main_app = FastAPI(
     title="WareWarden API",
+    description="API for WareWarden web application",
+    license_info={"name": "MIT License", "url": "https://opensource.org/license/mit"},
     default_response_class=ORJSONResponse,
     lifespan=lifespan,
 )
