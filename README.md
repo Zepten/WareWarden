@@ -29,12 +29,13 @@ WareWarden является личным пет-проектом и не свя�
     - [Tailwind CSS](https://tailwindcss.com/) (CSS-фреймворк)
     - [React](https://react.dev/) (библиотека для создания пользовательских интерфейсов)
         - [Ant Design](https://ant.design/) (библиотека компонентов для React)
+    - [Axios](https://axios-http.com/ru/docs/intro) (HTTP-клиент на основе Promise)
 - DevOps
     - [Docker](https://www.docker.com/) / [Docker Compose](https://docs.docker.com/compose/) (контейнеризация)
 
 ## Установка для разработки (Linux / WSL2)
 
-Для запуска WareWarden необходимы `Docker` и `Docker Compose`. Для активации виртуального окружения Python в целях удобства разработки следует установить `Python` и `Poetry`.
+Для запуска WareWarden необходимы `Docker` и `Docker Compose`. Для активации виртуального окружения Python для разработки бэкенда следует установить `Python` и `Poetry`. Также следует установить `Node.js` для разработки фронтенда.
 
 1. Клонировать репозиторий:
 
@@ -51,26 +52,36 @@ poetry install --no-root
 cd ..
 ```
 
-3. Настроить конфигурацию в файле `.dev.env`
+3. Установить зависимости для Node.js:
+
+```bash
+cd warewarden_frontend
+npm install
+cd ..
+```
+
+4. Настроить конфигурацию в файле `.dev.env`
 
 ```bash
 cp .env.example .dev.env
 nano .dev.env
 ```
 
-4. Собрать и запустить контейнеры с помощью Docker Compose:
+5. Собрать и запустить контейнеры с помощью Docker Compose:
 
 ```bash
 docker compose --env-file .dev.env up --build -d
 ```
 
-5. Применить миграцию базы данных с помощью Alembic:
+6. Применить миграцию базы данных с помощью Alembic:
 
 ```bash
 docker exec warewarden-api-service-1 sh -c "cd ./warewarden_api/ && alembic upgrade head"
 ```
 
-6. Проверить доступность API: http://localhost:8080/docs
+7. Проверить доступность приложения: http://localhost
+
+8. Проверить доступность API и его документации: http://localhost/api/docs
 
 ## Лицензия
 
