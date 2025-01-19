@@ -5,7 +5,7 @@ volumes:
 
 services:
   postgres-service:
-    image: postgres:17.2-alpine3.21
+    image: postgres:17.2-alpine3.20
     environment:
       - POSTGRES_DB=${DB_PATH:?error}
       - POSTGRES_USER=${DB_USERNAME:?error}

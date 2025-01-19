@@ -2,7 +2,7 @@
 # Stage 1. Base image
 ###############################################################################
 
-FROM python:3.13.1-alpine3.21 AS python-base
+FROM python:3.13.1-alpine3.20 AS python-base
 
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
