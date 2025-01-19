@@ -14,15 +14,23 @@ WareWarden является личным пет-проектом и не свя�
 
 - Бэкенд
     - База данных
-        - [PostgreSQL](https://www.postgresql.org/)
+        - [PostgreSQL](https://www.postgresql.org/) (реляционная СУБД)
     - API
-        - [Python](https://www.python.org/)
-            - [Poetry](https://python-poetry.org/)
-            - [FastAPI](https://fastapi.tiangolo.com/) / [Pydantic](https://docs.pydantic.dev/latest/)
-            - [SQLAlchemy](https://www.sqlalchemy.org/) / [asyncpg](https://github.com/MagicStack/asyncpg) / [Alembic](https://github.com/sqlalchemy/alembic)
-- Фронтенд **[WIP]**
+        - [Python](https://www.python.org/) (язык программирования)
+        - [Poetry](https://python-poetry.org/) (инструмент для управления зависимостями в Python)
+        - [FastAPI](https://fastapi.tiangolo.com/) (Python-фреймворк для API)
+        - [Pydantic](https://docs.pydantic.dev/latest/) (валидация данных)
+        - [SQLAlchemy](https://www.sqlalchemy.org/) (ORM для базы данных)
+            - [asyncpg](https://github.com/MagicStack/asyncpg) (асинхронный драйвер для PostgreSQL)
+        - [Alembic](https://github.com/sqlalchemy/alembic) (управление миграциями базы данных)
+- Фронтенд:
+    - [TypeScript](https://www.typescriptlang.org/) (типизированный JavaScript)
+    - [Vite](https://vite.dev/) (инструмент сборки фронтенда)
+    - [Tailwind CSS](https://tailwindcss.com/) (CSS-фреймворк)
+    - [React](https://react.dev/) (библиотека для создания пользовательских интерфейсов)
+        - [Ant Design](https://ant.design/) (библиотека компонентов для React)
 - DevOps
-    - [Docker](https://www.docker.com/) / [Docker Compose](https://docs.docker.com/compose/)
+    - [Docker](https://www.docker.com/) / [Docker Compose](https://docs.docker.com/compose/) (контейнеризация)
 
 ## Установка для разработки (Linux / WSL2)
 
