@@ -22,6 +22,10 @@ main_app = FastAPI(
     title="WareWarden API",
     description="API for WareWarden web application",
     license_info={"name": "MIT License", "url": "https://opensource.org/license/mit"},
+    docs_url=f"{settings.api.prefix}/docs",
+    redoc_url=f"{settings.api.prefix}/redoc",
+    openapi_url=f"{settings.api.prefix}/openapi.json",
+    oauth2_redirect_url=f"{settings.api.prefix}/docs/oauth2-redirect",
     default_response_class=ORJSONResponse,
     lifespan=lifespan,
 )
