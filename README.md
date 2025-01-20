@@ -63,17 +63,17 @@ npm install
 cd ..
 ```
 
-4. Настроить конфигурацию в файле `.dev.env`
+4. Настроить конфигурацию в файле `.env.dev`
 
 ```bash
-cp .env.example .dev.env
-nano .dev.env
+cp .env.dev.example .env.dev
+nano .env.dev
 ```
 
 5. Собрать и запустить контейнеры с помощью Docker Compose:
 
 ```bash
-docker compose --env-file .dev.env up --build -d
+docker compose -f compose.dev.yaml --env-file .env.dev up --build -d
 ```
 
 6. Применить миграцию базы данных с помощью Alembic:
