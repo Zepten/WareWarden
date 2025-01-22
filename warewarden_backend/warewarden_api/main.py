@@ -26,6 +26,7 @@ main_app = FastAPI(
     docs_url=f"{settings.api.prefix}/docs",
     redoc_url=None,
     openapi_url=f"{settings.api.prefix}/openapi.json",
+    swagger_ui_oauth2_redirect_url=f"{settings.api.prefix}/openapi.json",
     oauth2_redirect_url=f"{settings.api.prefix}/docs/oauth2-redirect",
     default_response_class=ORJSONResponse,
     lifespan=lifespan,
