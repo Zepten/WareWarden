@@ -9,7 +9,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "format": "prettier --write ."
+    "format": "prettier --write ./src"
   },
   "dependencies": {
     "@ant-design/icons": "^5.5.2",
@@ -25,6 +25,8 @@
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.17.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-react": "7.37.4",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
     "globals": "^15.14.0",

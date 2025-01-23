@@ -1,18 +1,29 @@
 import js from "@eslint/js";
 import globals from "globals";
+import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
+import prettierConfig from "eslint-config-prettier";
 
 export default tseslint.config(
   { ignores: ["dist"] },
   {
-    extends: [js.configs.recommended, ...tseslint.configs.recommended],
-    files: ["**/*.{ts,tsx}"],
     languageOptions: {
       ecmaVersion: 2020,
-      globals: globals.browser,
+      sourceType: "module",
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
     },
+    extends: [
+      js.configs.recommended,
+      ...tseslint.configs.recommended,
+      react.configs.flat["jsx-runtime"],
+      prettierConfig,
+    ],
+    files: ["**/*.{js,jsx,ts,tsx}"],
     plugins: {
       "react-hooks": reactHooks,
       "react-refresh": reactRefresh,
@@ -24,5 +35,13 @@ export default tseslint.config(
         { allowConstantExport: true },
       ],
     },
-  },
+    settings: {
+      "import/resolver": {
+        typescript: {
+          alwaysTryTypes: true,
+          extensions: [".js", ".jsx", ".ts", ".tsx"],
+        },
+      },
+    },
+  }
 );
